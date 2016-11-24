@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/base_item_single_line_height"
+    android:background="?selectableItemBackground">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/base_item_single_line_height"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/base_item_padding"
+        android:paddingRight="@dimen/base_item_padding"
+        android:maxLines="1"
+        android:text="快易学项目"
+        android:textColor="@color/colorMainText"
+        android:textSize="@dimen/base_item_main_text"/>
+
+    <TextView
+        android:id="@+id/tv_statics"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/base_item_single_line_height"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/base_item_padding"
+        android:paddingRight="@dimen/base_item_padding"
+        android:maxLines="1"
+        android:text="10/20"
+        android:textColor="@color/colorMainText"
+        android:textSize="@dimen/base_item_main_text" />
+
+</RelativeLayout>
