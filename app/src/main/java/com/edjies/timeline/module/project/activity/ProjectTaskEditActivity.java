@@ -61,6 +61,7 @@ public class ProjectTaskEditActivity extends BaseActivity implements View.OnClic
     }
 
     private void setViews() {
+        setTitle("编辑");
         mRlRoot = (RelativeLayout) findViewById(R.id.rl_root);
         mEtTitle = (EditText) findViewById(R.id.et_title);
         mEtEt = (EditText) findViewById(R.id.et_et);

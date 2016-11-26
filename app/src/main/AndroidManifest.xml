@@ -19,10 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- -->
+        <!-- 项目-->
         <activity android:name=".module.project.activity.ProjectDetailActivity" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".module.project.activity.ProjectTaskEditActivity"/>
-        <activity android:name=".module.template.TeimplateActivity"></activity>
+        <activity android:name=".module.project.activity.ProjectTaskEditActivity" android:parentActivityName=".module.project.activity.ProjectDetailActivity"/>
+        <activity android:name=".module.template.TeimplateActivity" />
+        <!-- Stock-->
+        <activity android:name=".module.stock.activity.StockPoolActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".module.stock.activity.StockTrackActivity" android:parentActivityName=".module.stock.activity.StockPoolActivity"/>
     </application>
 
 </manifest>

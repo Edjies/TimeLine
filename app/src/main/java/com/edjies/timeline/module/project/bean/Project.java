@@ -10,11 +10,12 @@ import java.util.ArrayList;
 
 /**
  * 项目信息
+ * 作为主键的id的类型必须为Long， 而不是long， 否则id不会自增。
  * Created by hubble on 2016/11/19 0019.
  */
 @Entity
 public class Project {
-    @Id(autoincrement = true)
+    @Id(autoincrement = true) /**作为主键的id的类型必须为Long， 而不是long， 否则id不会自增。*/
     private Long id;
     @NotNull
     private String title = "";

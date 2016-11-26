@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.edjies.timeline.module.project.ProjectMainFragment;
+import com.edjies.timeline.module.stock.activity.StockPoolActivity;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -84,8 +85,8 @@ public class MainActivity extends BaseActivity
 
         } else if (id == R.id.nav_common) {
 
-        } else if (id == R.id.nav_share) {
-
+        } else if (id == R.id.nav_stock) {
+            StockPoolActivity.intentMe(this);
         } else if (id == R.id.nav_send) {
 
         }

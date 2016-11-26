@@ -5,11 +5,11 @@
         <item
             android:id="@+id/nav_project"
             android:icon="@drawable/ic_menu_camera"
-            android:title="project" />
+            android:title="项目" />
         <item
             android:id="@+id/nav_learn"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="learn" />
+            android:title="学习" />
         <item
             android:id="@+id/nav_single"
             android:icon="@drawable/ic_menu_slideshow"
@@ -20,12 +20,12 @@
             android:title="common" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="实用工具">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_stock"
+                android:icon="@drawable/ic_menu_trending"
+                android:title="Stock Track" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"

@@ -11,6 +11,8 @@ import com.edjies.timeline.module.project.bean.ProjectItemDao;
 import com.edjies.timeline.module.project.bean.ProjectStatus;
 import com.edjies.timeline.utils.UDate;
 
+import org.greenrobot.greendao.query.QueryBuilder;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -53,11 +55,19 @@ public class ProjectDaoInterface {
     }
 
     // 获取我的项目详情列表
-    public ArrayList<ProjectItem> getMyProjectDetails(Long projectId) {
+    public ArrayList<ProjectItem> getMyProjectDetails(Long projectId, int status) {
         DaoSession session = MyApplication.getInstance().getDaoSession();
         ProjectItemDao projectDao = session.getProjectItemDao();
-        ArrayList<ProjectItem> projectDetails = (ArrayList<ProjectItem>)projectDao.queryBuilder().where(ProjectItemDao.Properties.ProjectId.eq(projectId)).list();
-        return projectDetails;
+        QueryBuilder<ProjectItem> queryBuilder = projectDao.queryBuilder().where(ProjectItemDao.Properties.ProjectId.eq(projectId));
+        if(status != ProjectStatus.STATUS_UNDEFINED) {
+            queryBuilder.where(ProjectItemDao.Properties.Status.eq(ProjectStatus.STATUS_TOD));
+        }
+        ArrayList<ProjectItem> projectDetails = (ArrayList<ProjectItem>) queryBuilder.list();
+        ArrayList<ProjectItem> result = new ArrayList<>();
+        for(ProjectItem item : projectDetails) {
+            result.add(new ProjectItem(item));
+        }
+        return result;
     }
 
     // 添加项目

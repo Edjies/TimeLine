@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Entity
 public class ProjectItem implements Serializable{
     public static final long serialVersionUID = 0L;
-    @Id(autoincrement = true)
+    @Id(autoincrement = true)   /**作为主键的id的类型必须为Long， 而不是long， 否则id不会自增。*/
     private Long id;
     @NotNull
     private Long projectId;
@@ -30,9 +30,12 @@ public class ProjectItem implements Serializable{
 
     private String details = "";
 
-    @Generated(hash = 1050564834)
+    private String endTime = "";
+
+    @Generated(hash = 1420592165)
     public ProjectItem(Long id, @NotNull Long projectId, @NotNull String title,
-            @NotNull String createTime, int status, int et, String details) {
+            @NotNull String createTime, int status, int et, String details,
+            String endTime) {
         this.id = id;
         this.projectId = projectId;
         this.title = title;
@@ -40,6 +43,7 @@ public class ProjectItem implements Serializable{
         this.status = status;
         this.et = et;
         this.details = details;
+        this.endTime = endTime;
     }
 
     public ProjectItem(Long projectId, String title, String createTime, int et) {
@@ -47,6 +51,17 @@ public class ProjectItem implements Serializable{
         this.title = title;
         this.createTime = createTime;
         this.et = et;
+    }
+
+    public ProjectItem(ProjectItem item) {
+        this.id = item.id;
+        this.projectId = item.projectId;
+        this.title = item.title;
+        this.createTime = item.createTime;
+        this.status = item.status;
+        this.et = item.et;
+        this.details = item.details;
+        this.endTime = item.endTime;
     }
 
     @Generated(hash = 554209198)
@@ -99,7 +114,11 @@ public class ProjectItem implements Serializable{
         this.details = details;
     }
 
+    public String getEndTime() {
+        return this.endTime;
+    }
 
- 
-
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
 }

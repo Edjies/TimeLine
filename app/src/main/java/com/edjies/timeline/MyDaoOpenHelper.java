@@ -28,18 +28,10 @@ public class MyDaoOpenHelper extends DaoMaster.DevOpenHelper {
     private void upgrade(SQLiteDatabase db, int migrateVersion) {
         switch (migrateVersion) {
             case 2:
-                try {
-                    db.execSQL("ALTER TABLE "+ ProjectItemDao.TABLENAME +" ADD COLUMN 'DETAILS' TEXT;");
-                }catch (Exception e) {
-
-                }
-
+                db.execSQL("ALTER TABLE "+ ProjectItemDao.TABLENAME +" ADD COLUMN 'DETAILS' TEXT;");
                 break;
             case 3:
-                //db.execSQL("ALTER TABLE INHABITANT ADD COLUMN 'SPECIES' TEXT;");
-                //db.execSQL("ALTER TABLE INVERTEBRATE ADD COLUMN 'SPECIES' TEXT;");
-                //db.execSQL("ALTER TABLE PLANT ADD COLUMN 'SPECIES' TEXT;");
-                //db.execSQL("ALTER TABLE CORAL ADD COLUMN 'SPECIES' TEXT;");
+                db.execSQL("ALTER TABLE "+ ProjectItemDao.TABLENAME +" ADD COLUMN 'END_TIME' TEXT;");
                 break;
         }
     }

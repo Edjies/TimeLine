@@ -15,10 +15,12 @@ import com.edjies.timeline.module.project.activity.ProjectDetailActivity;
 import com.edjies.timeline.module.project.bean.Project;
 import com.edjies.timeline.module.project.bean.ProjectItem;
 import com.edjies.timeline.module.project.bean.ProjectStatus;
+import com.edjies.timeline.utils.UDate;
 import com.edjies.timeline.utils.ULog;
 import com.edjies.timeline.utils.UToast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 
 /**
@@ -78,7 +80,6 @@ public class ProjectDetailAdapter extends RecyclerView.Adapter<RecyclerView.View
         mHolder.mTvTitle.setText(item.getTitle());
         if(item.getStatus() == ProjectStatus.STATUS_CPT) {
             mHolder.mCbStatus.setChecked(true);
-
             mHolder.mCbStatus.setEnabled(false);
         }else {
             mHolder.mCbStatus.setChecked(false);
@@ -95,8 +96,10 @@ public class ProjectDetailAdapter extends RecyclerView.Adapter<RecyclerView.View
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
                     item.setStatus(ProjectStatus.STATUS_CPT);
+                    item.setEndTime(UDate.getFormatDate(Calendar.getInstance(), "yyyy-MM-dd HH:mm:ss"));
                 }else {
                     item.setStatus(ProjectStatus.STATUS_TOD);
+                    item.setEndTime("");
                 }
             }
         });

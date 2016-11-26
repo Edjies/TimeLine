@@ -6,6 +6,8 @@ package com.edjies.timeline.module.project.bean;
  */
 
 public class ProjectStatus {
+    /** 未定义（全部）*/
+    public final static int STATUS_UNDEFINED = 3;
     /** 已完成*/
     public final static int STATUS_CPT = 1;
     /** 待做*/
